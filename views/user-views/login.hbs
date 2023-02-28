@@ -1,0 +1,50 @@
+{{!-- <h2>Log In</h2>
+
+
+<br>
+
+<form action="/auth/login" method="post">
+    <label for="emailInput">Email: <input type="email" name="email" id="emailInput" required></label>
+    <label for="passwordInput">Password: <input type="password" name="password" id="passwordInput" required></label>
+
+    <button>Log In</button>
+    <p>Don't have account?</p>
+    <a href="/auth/signup">Sign Up</a>
+</form>
+
+<br>
+<h3>{{message}}</h3> --}}
+
+<div class="container">
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="card p-3 mt-5" style="width:22rem">
+      <form action="/auth/login" method="post">
+        <div class="mb-3">
+          <label for="emailInput" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="emailInput"
+            name="email"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="passwordInput" class="form-label">Password</label>
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            id="passwordInput"
+            required
+          />
+        </div>
+        <div class="d-grid gap-2">
+            <button class="btn btn-block btn-primary">Login</button>
+        </div>
+      </form>
+      <p class="mb-0">Don't have account? <a href="/auth/signup">Sign Up</a></p>
+      
+    </div>
+  </div>
+</div>

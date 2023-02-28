@@ -1,0 +1,215 @@
+<div class="container my-4">
+  <h4 class="text-center mt-5 mb-3">Update request</h4>
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="card p-3" style="width:40rem">
+      <form action="/shelters/update/{{request._id}}" method="post">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="message" class="form-label">Your Message</label>
+              <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">
+                  <i class="fa-solid fa-bowl-food"></i>
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="message"
+                  id="message"
+                  value="{{request.message}}"
+                  required
+                />
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="phoneNumber" class="form-label">Phone</label>
+              <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">
+                  <i class="fa-solid fa-phone"></i>
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="phoneNumber"
+                  id="phoneNumber"
+                  value="{{request.phoneNumber}}"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="mb-0">Food Type</label>
+          <hr class="my-1" />
+          <div class="row mt-2">
+            <div class="col-md-6">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="Fancy"
+                  name="foodTypes"
+                  id="Fancy"
+                  {{isChecked "Fancy" request.foodTypes}}
+                />
+                <label class="form-check-label" for="Fancy">
+                  Fancy
+                </label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="General"
+                  name="foodTypes"
+                  id="General"
+                  {{isChecked "General" request.foodTypes}}
+                />
+                <label class="form-check-label" for="General">
+                  General
+                </label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="Fast"
+                  name="foodTypes"
+                  id="Fast"
+                  {{isChecked "Fast" request.foodTypes}}
+                />
+                <label class="form-check-label" for="Fast">
+                  Fast Food
+                </label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="Take-Out"
+                  name="foodTypes"
+                  id="Take-Out"
+                  {{isChecked "Take-Out" request.foodTypes}}
+                />
+                <label class="form-check-label" for="Take-Out">
+                  Take-Out
+                </label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="mb-3">
+          <label for="address" class="form-label mb-0">Address</label>
+          <hr class="my-1" />
+          <div class="row">
+            <div class="col-md-6 mb-2 mt-2">
+              <div class="form-group">
+                <label for="street">Street Address</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="street"
+                  name="street"
+                  placeholder="123 Main St"
+                  value="{{request.address.street}}"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-6 mb-2 mt-2">
+              <div class="form-group">
+                <label for="city">City</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="city"
+                  name="city"
+                  placeholder="San Francisco"
+                  value="{{request.address.city}}"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-6 mb-2">
+              <div class="form-group">
+                <label for="state">State</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="state"
+                  name="state"
+                  placeholder="California"
+                  value="{{request.address.state}}"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-6 mb-2">
+              <div class="form-group">
+                <label for="zip">Zip Code</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="zip"
+                  name="zip"
+                  placeholder="94105"
+                  value="{{request.address.zip}}"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description
+            <span class="text-muted">(anything related to your request)</span></label>
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">
+              <i class="fa-solid fa-message"></i>
+            </span>
+            <textarea
+              type="text"
+              class="form-control"
+              name="description"
+              id="description"
+              required
+            >{{request.description}}</textarea>
+          </div>
+        </div>
+
+        <div class="mb-3">
+              <label for="budget" class="form-label">Budget</label>
+              <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">
+                  <i class="fa-solid fa-dollar"></i>
+                </span>
+                <input
+                  type="number"
+                  class="form-control"
+                  name="budget"
+                  id="budget"
+                  required
+                  value="{{request.budget}}"
+                />
+              </div>
+            </div>
+
+        <div class="d-grid gap-2">
+          <button class="btn btn-block btn-primary">Update request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

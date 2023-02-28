@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <div class="row">
+    <h4 class="text-center mb-3">Restaurant details</h4>
+    <div class="col-12">
+      <p><b>Restaurant Name: </b> {{restaurant.title}} </p>
+      <p><b>Phone Number: </b> {{restaurant.phoneNumber}} </p>
+      <p><b>Food Type: </b>
+        {{#each restaurant.foodTypes}}
+          {{this}}, 
+        {{/each}}
+      </p>
+      <p><b>Address: </b>
+        {{restaurant.address.street}},
+        {{restaurant.address.city}},
+        {{restaurant.address.state}}
+        {{restaurant.address.zip}}
+      </p>
+      <p><b>Created At:</b> {{restaurant.createdAt}} </p>
+    </div>
+    <button class="btn btn-primary" onclick="history.back()">Go Back</button>
+  </div>
+</div>

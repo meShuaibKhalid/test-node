@@ -1,0 +1,59 @@
+<div class="container my-5">
+  <div class="row my-5">
+    <div class="d-flex justify-content-between">
+      <h4>Shelter Requests</h4>
+      <button
+        class="btn btn-primary"
+        onclick="window.location.href = 'shelters/create' "
+      >Create new request</button>
+    </div>
+    <table class="table table-striped mt-4">
+      <thead>
+        <tr>
+          <th scope="col">Message</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Description</th>
+          <th scope="col">Food Type</th>
+          <th scope="col">Budget</th>
+          <th scope="col">Area</th>
+          <th scope="col" style="text-align:center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {{#each shelters}}
+          <tr>
+            <td data-label="Message">{{this.message}}</td>
+            <td data-label="Phone Number">{{this.phoneNumber}}</td>
+            <td
+              data-label="Description"
+              class="des-col"
+            >{{this.description}}</td>
+            <td data-label="Food Type">{{#each this.foodTypes}}
+                {{this}}
+              {{/each}}</td>
+            <td data-label="Budget">{{this.budget}} $</td>
+            <td data-label="Area">{{this.address.street}},
+              {{this.address.city}},
+              {{this.address.state}}
+              {{this.address.zip}}</td>
+            <td data-label="Actions" class="action-col">
+              <button
+                class="btn btn-secondary"
+                onclick="window.location.href = '/shelters/details/{{this._id}}' "
+              >View</button>
+              |
+              <button
+                onclick="window.location.href = '/shelters/edit/{{this._id}}'"
+                class="btn btn-primary"
+              >Edit</button>
+              |
+              <button class="btn btn-danger" onclick="window.location.href = '/shelters/delete/{{this._id}}'">Delete</button>
+            </td>
+          </tr>
+
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>

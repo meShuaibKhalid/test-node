@@ -1,0 +1,70 @@
+/* I focusing on functionalities first, may use Boot Strap as well */
+#map {
+  height: 500px;
+  width: 100%;
+}
+
+.des-col {
+    max-width: 300px;
+}
+
+.action-col {
+  text-align: center;
+}
+
+
+@media screen and (max-width: 800px) {
+  table {
+    border: 0;
+  }
+
+  .des-col {
+    display: flex;
+    text-align: left;
+    max-width: unset;
+  }
+
+  .des-col::before {
+    margin-right: 30px;
+  }
+
+  .action-col {
+    text-align: right;
+  }
+
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    text-align: right;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+

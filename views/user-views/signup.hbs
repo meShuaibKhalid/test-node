@@ -1,0 +1,61 @@
+{{!-- <h2>Sign Up</h2>
+
+
+<br>
+
+<form action="/auth/signup" method="post">
+    <label for="userNameInput">User Name: <input type="text" name="username" id="userNameInput" required></label>
+    <label for="emailInput">Email: <input type="email" name="email" id="emailInput"></label>
+    <label for="passwordInput">Password: <input type="password" name="password" id="passwordInput" required></label>
+
+    <button>Sign Up</button>
+</form>
+
+<br>
+<h3>{{message}}</h3> --}}
+
+
+<div class="container">
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="card p-3 mt-5" style="width:22rem">
+      <form action="/auth/signup" method="post">
+       <div class="mb-3">
+          <label for="userNameInput" class="form-label">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="userNameInput"
+            name="username"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="emailInput" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="emailInput"
+            name="email"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="passwordInput" class="form-label">Password</label>
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            id="passwordInput"
+            required
+          />
+        </div>
+        <div class="d-grid gap-2">
+            <button class="btn btn-block btn-primary">Signup</button>
+        </div>
+      </form>
+      <p class="mb-0">Already a user? <a href="/auth/login">Login</a></p>
+      
+    </div>
+  </div>
+</div>
